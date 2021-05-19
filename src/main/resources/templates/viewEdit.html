@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Title</title>
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<!--<div class = "container">-->
+<!--    <table>-->
+<!--      <tr class = "row" th:each = "user: ${userInfo}">-->
+<!--        <td class = "col-xs-12" th:text = "*{user.name}"></td>-->
+<!--        <td class = "col-xs-offset-6" > <a th:href = "@{/index/edit/{id}(id = ${user.id})}">Edit</a></td>-->
+<!--      </tr>-->
+<!--    </table>-->
+<!--</div>-->
+<div class = "col-md-8">
+<input id="myInput" type="text" placeholder="Search..">
+</div>
+<div class = "col-md-8">
+    <table class = "table table-hover">
+        <tbody id = "myTable">
+            <tr th:each = "user: ${userInfo}">
+                <td class="active" th:text = "*{user.name}"></td>
+                <td > <a th:href = "@{/index/edit/{id}(id = ${user.id})}">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--<div class="row row-no-gutters">-->
+<!--    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>-->
+<!--    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>-->
+
+<!--    &lt;!&ndash; Add the extra clearfix for only the required viewport &ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="clearfix visible-xs-block"></div>&ndash;&gt;-->
+
+<!--    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>-->
+<!--    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>-->
+<!--</div>-->
+
+<!--<div class = "row">-->
+<!--    <div class="col-md-1">.col-md-1</div>-->
+<!--</div>-->
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Title</title>
+    <style>
+        .content-middle{
+            position: absolute;
+            top: 30%;
+            left: 45%;
+        }
+    </style>
+</head>
+<body>
+<div class="content-middle">
+    <a  class="btn btn-primary col-md-12" th:href = "@{/index/add}" role="button">Add User</a>
+    <br>
+    <br>
+    <a class="btn btn-primary col-md-12" th:href = "@{/index/edit}" role="button">Edit User</a>
+</div>
+</body>
+</html>
